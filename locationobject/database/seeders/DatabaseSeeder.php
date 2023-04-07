@@ -32,9 +32,10 @@ class DatabaseSeeder extends Seeder
       //      'email' => 'testong@example.com',
            
       //  ]);
-      //   \App\Models\Category::factory(6)->create();
-      // \App\Models\Product::factory(16)->create();
-     \App\Models\annonces::factory(16)->create();
+       //\App\Models\Category::factory(6)->create();
+      \App\Models\demandes::factory(16)->create();
+      //\App\Models\Product::factory(16)->create();
+     //\App\Models\annonces::factory(16)->create();
 
 
     }

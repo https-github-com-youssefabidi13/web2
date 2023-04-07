@@ -14,6 +14,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/imgs/theme/favicon.ico')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"></script>
     @livewireStyles
 </head>
 
@@ -80,8 +87,16 @@
                     @livewire('header-search-component')
                     <div class="header-action-right">
                         <div class="header-action-2">
+                            
+                            @auth
                             @livewire('wishlist-icon-component')
                             @livewire('cart-icon-component')
+                            @livewire('feedback-bell')
+                        @endauth
+                        
+                        @guest
+                            <p>You need to log in to see your wishlist, cart, and feedback notifications.</p>
+                        @endguest
                         </div>
                     </div>
                 </div>
