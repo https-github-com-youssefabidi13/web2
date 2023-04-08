@@ -1,7 +1,8 @@
 <div x-data="{ dropdownOpen: false }" class="header-action-icon-2" wire:poll.5s>
-    <button @click="dropdownOpen = !dropdownOpen" class="mini-cart-icon"><i class="fas fa-comment-alt"></i>
-    </button>
-
+    {{-- <button @click="dropdownOpen = !dropdownOpen" class="mini-cart-icon"><i class="fas fa-comment-alt"></i>
+    </button> --}}
+    <img class="svgInject" alt="message"
+    src="{{asset('assets/imgs/theme/icons/icom-message.svg')}}" width="30" height="25" @click="dropdownOpen = !dropdownOpen">
     <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
     
     @if(count($demandes) > 0)

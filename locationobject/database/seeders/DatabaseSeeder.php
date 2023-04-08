@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\notifications;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -33,10 +34,11 @@ class DatabaseSeeder extends Seeder
            
       //  ]);
        //\App\Models\Category::factory(6)->create();
-      \App\Models\demandes::factory(16)->create();
+      //  \App\Models\demandes::factory(16)->create();
       //\App\Models\Product::factory(16)->create();
      //\App\Models\annonces::factory(16)->create();
 
+     \App\Models\notifications::factory()->count(5)->create();
 
     }
 }

@@ -91,6 +91,7 @@
                         <div class="header-action-2">
                             
                             @auth
+                            @livewire('notification-bell')
                             @livewire('wishlist-icon-component')
                             @livewire('cart-icon-component')
                             @livewire('feedback-bell')

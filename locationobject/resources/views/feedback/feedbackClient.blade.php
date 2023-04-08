@@ -288,7 +288,7 @@
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                                                        placeholder="Write Comment"></textarea>
+                                                                        placeholder="review the partner"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
