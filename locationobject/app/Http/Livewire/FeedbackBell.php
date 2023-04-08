@@ -12,7 +12,7 @@ class FeedbackBell extends Component
     {
 
         //alert partner to comment client
-        $Clientdemandes = demandes::where([
+        $Clientdemandes = demandes::with('annonces','products')->where([
             ['user_id', '=', auth()->user()->id],
             ['feedbackArticle', '=', 'pending'],
             ['state', '=', 'done'],
@@ -21,13 +21,13 @@ class FeedbackBell extends Component
         //alert client to comment partner
         $PartnerDemandes = [];
 
-        $demandesP = demandes::where([
+        $demandesP = demandes::with('annonces','products')->where([
             ['feedbackClient', '=', 'pending'],
             ['state', '=', 'done'],
         ])->get();
 
         foreach ($demandesP as $demande) {
-            if ($demande->annonces->products->user->id == auth()->user()->id);
+            if ($demande->annonces->user_id == auth()->user()->id);
             array_push($PartnerDemandes, $demande);
         }
 

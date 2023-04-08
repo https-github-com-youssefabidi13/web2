@@ -12,6 +12,7 @@ use App\Http\Livewire\WishlistComponent;
 use App\Http\Controllers\ObjectController;
 use App\Http\Controllers\AnnonceController;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Controllers\feedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,7 +61,10 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/shop', ShopComponent::class)->name ('shop');
     Route::get('/cart', CartComponent::class)->name ('shop.cart');
     Route::get('/checkout', CheckoutComponent::class)->name ('shop.checkout');
+    Route::get('/feedback/{demande_id}/{id}', [feedbackController::class, 'create'])->name('feedback.details');
     Route::get('/wishlist',WishlistComponent::class)->name('shop.wishlist');
+    Route::post('/feedback/add', [feedbackController::class, 'store']);
+
 });
 
 
