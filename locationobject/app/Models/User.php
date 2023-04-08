@@ -50,5 +50,28 @@ class User extends Authenticatable
     {
         return $this->hasMany(annonces::class);
     }
+    public function demandes()
+    {
+        return $this->hasMany(demandes::class);
+    }
+
+    public function feedbackArticle(){
+        return $this->hasMany(feedback_articles::class);
+    }
+
+    
+
+    public function cart(){
+        return $this->hasMany(carts::class); 
+    }
+
+
+    public function feedbackFrom(){
+        return $this->hasMany(feedback_clients::class,'partner_id');
+    }
+
+    public function feedbackTo(){
+        return $this->hasMany(feedbackClient::class,'client_id');
+    }
 
 }
